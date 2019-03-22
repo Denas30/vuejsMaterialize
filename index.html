@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <link rel="stylesheet" href="style.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+ 
+  <body>
+      <!--panel 1-->
+      <div class=" section container" id="fatherPanel">
+          <div class="row card-panel" id="sonPanel">
+                <div class="col s2 filas">
+                    <input type="text" id="dateTamano" class="datepicker"><img src="./icons/calendario.svg" alt="" id="calendario-icon">  
+                </div>
+                <div class="col s2 filas">
+                    <select class="anchoCanal">
+                        <option value="" disabled selected>Canal</option>
+                        <option value="1">Canal</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                </div>
+                <div class="col s2 filas">
+                    <select>
+                        <option value="" disabled selected>Categoria</option>
+                        <option value="1">Categoria</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                </div>
+                <div class="col s2">&nbsp;</div>
+                <div class="col s2 filas">
+                     <select>
+                        <option value="" disabled selected>Subcategoria</option>
+                        <option value="1">Subcategoria</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                </div>
+                <div class="col s2 filas">
+                    <select>
+                        <option value="" disabled selected>Marca</option>
+                        <option value="1">Marca</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                </div>
+          </div>
+      </div>
+    <!--panel 2-->
+    <div class=" section container" id="fatherPanel">
+            <div class="row card-panel" id="sonPanel">
+                  <div class="col s2 filas">
+                      <select  v-model="selected" :required="true" @change="changeLocation">
+                        <option :selected="true">Sku</option>
+                        <option v-for="option in options" v-bind:value="option.content"></option>
+                       </select>
+                  </div>
+                  <div class="col s3 filas">
+                    
+                      <select  v-model="selected" :required @change="changeLocation">
+                        <option :selected="true">Por Distrito y Sku</option>
+                        <option v-for="distritoSku in distritoSku" v-bind:value="distritoSku.content">{{distritoSku.content}}</option>
+                      </select>
+                     
+                  </div>
+                  <div class="col s2">
+                        &nbsp;
+                  </div>
+                  <div class="col s2">&nbsp;</div>
+                  <div class="col s1">
+                        <a class="waves-effect grey lighten-4 btn"></a>  <img src="./icons/iconPdf.svg" alt="" id="pdf-icon">  
+                  </div>
+                  <div class="col s1">
+                        <a class="waves-effect grey lighten-4 btn"></a>  <img src="./icons/panel.svg" alt="" id="panel-icon">  
+                  </div>
+            </div>
+    </div>
+         
+    
+        <h4 class="textTitulo">Visibilidad de lima por distrito</h4>
+        
+        <!--etiqueta de la grafica-->
+        <div id="chartdiv"></div>
+        
+
+
+
+
+    <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <!--grafico con charh-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        M.AutoInit();
+        });
+
+
+        new vue({
+         el:'#app',
+         data:{
+            selected: "Choose Province",
+            grafica:false,
+             },
+             options:[
+               {value: 1, content:'sku'},
+               {value: 2, content:'opcion1'}
+             ],
+             distritoSku:[
+               {value: 1, content:'distrito'},
+               {value: 2, content:'opcion1'}
+             ]
+           })
+
+
+
+          </script>
+  </body>
+</html>

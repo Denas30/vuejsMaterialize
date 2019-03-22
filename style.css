@@ -1,0 +1,76 @@
+
+.card-panel {/* barra del panel para colocar los options*/
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    padding: 24px;
+    margin: .5rem 0 1rem 0;
+    border-radius: 9px;
+    background-color: #fff;
+    height: 64px;
+    -webkit-box-shadow: -4px 14px 61px -18px rgba(0,0,0,0.75);
+    -moz-box-shadow: -4px 14px 61px -18px rgba(0,0,0,0.75);
+     box-shadow: -4px 14px 61px -18px rgba(0,0,0,0.75);
+}
+
+.filas{ /*mover todo el contenido dentro de los panel*/
+    position: relative;
+    top: -21px;
+}
+
+.waves-effect { /* button para colocar icono*/
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
+    height: 46px;
+    width: 44px;
+    border-radius: 50%;
+    top: -14px;
+    left: 100px
+}
+
+#panel-icon{
+    position: relative;
+    width: 26px;
+    top: -9px;
+    z-index: 1;
+    left: 61px;
+}
+
+#pdf-icon{
+    position: relative;
+    width: 26px;
+    top: -5px;
+    z-index: 1;
+    left: 59px;
+}
+
+#calendario-icon{
+    position: relative;
+    width: 26px;
+    top: -36px;
+    /* z-index: 1; */
+    left: 186px;
+}
+
+#chartdiv {
+    width: 500px;
+    height: 500px;
+  }
+       
+ .textTitulo{
+    position: relative;
+    left: 30px;
+    color: #42a5f5;
+ }
